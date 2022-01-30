@@ -1,0 +1,7 @@
+{
+    "isProductionEnvironment": false,
+    "isDevelopEnvironment": true,
+    "mongoDBUrl": "mongodb://localhost:27017/roleBaseUserDB",
+    "api": "https://the-one-api.dev/v2",
+    "token": "-eBdhPjhRdDJMkED6Zwz"
+}
