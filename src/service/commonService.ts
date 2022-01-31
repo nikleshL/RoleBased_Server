@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import request from "request";
 import * as environment from '../environment.json';
+import { commonUtility } from '../utility/commonUtility';
 
 class CommonService {
     constructor() {}
@@ -14,7 +15,7 @@ class CommonService {
     getExternalApiResponse (options: any, req: Request, res: Response) {
         return new Promise(function (success, failure) {
             request(options, function (error: any, response: any, body: any) {
-            let data = JSON.parse(body);
+            let data = (commonUtility.isJson(body)) ? JSON.parse(body) : body;
             if(error){
                 failure(error);
             }else if (response.statusCode > 204) {
